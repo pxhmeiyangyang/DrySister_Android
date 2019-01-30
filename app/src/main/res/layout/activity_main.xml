@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="换一批"/>
+
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn_refresh"
+        android:text="下一个妹子"
+        />
 
     <ImageView
         android:id="@+id/img_show"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:background="@color/colorAccent"
-        />
-
-    <Button
-        android:id="@+id/btn_show"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary"
-        android:text="换一个"
+        android:layout_above="@id/btn_show"
         />
 
 
 
 
-</LinearLayout>
+</RelativeLayout>
