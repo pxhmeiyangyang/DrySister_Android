@@ -1,4 +1,4 @@
-package com.example.pxh.drysister;
+package com.example.pxh.drysister.ImgLoader;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -33,7 +33,7 @@ public class PictureLoader {
         }
     };
 
-    void load(ImageView loadImg,String imgurl){
+    public void load(ImageView loadImg,String imgurl){
         this.loadImg = loadImg;
         this.imgurl = imgurl;
         Drawable drawable = loadImg.getDrawable();
