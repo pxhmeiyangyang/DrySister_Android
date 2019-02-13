@@ -1,4 +1,4 @@
-package com.example.pxh.drysister;
+package com.example.pxh.drysister.UI.Activity;
 
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.pxh.drysister.ImgLoader.PictureLoader;
+import com.example.pxh.drysister.ImgLoader.SisterLoader;
 import com.example.pxh.drysister.Network.SisterApi;
+import com.example.pxh.drysister.R;
 import com.example.pxh.drysister.bean.entity.Sister;
 
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private PictureLoader loader;
     private SisterApi sisterApi;
     private SisterTask sisterTask;
+    private SisterLoader mLoader;
 
 
     @Override
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         loader = new PictureLoader();
         sisterApi = new SisterApi();
+        mLoader = SisterLoader.getInstance(MainActivity.this);
         initData();
         initUI();
     }
@@ -57,7 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (curPos > data.size() - 1){
                         curPos = 0;
                     }
-                    loader.load(showImg,data.get(curPos).getUrl());
+//                    loader.load(showImg,data.get(curPos).getUrl());
+                    mLoader.bindBitmap(data.get(curPos).getUrl(),showImg,400,400);
                     curPos ++;
                 }
                 break;
