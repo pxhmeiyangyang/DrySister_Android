@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (NetworkUtils.isAvailable(getApplicationContext())){
                 result = sisterApi.fetchSister(10,page);
                 //查询数据库中的妹子，避免重复插入
-                if (mDbHelper.getSisterCount() / 10 < page){
+                if (mDbHelper.getSistersCount() / 10 < page){
                     mDbHelper.insertSisters(result);
                 }else{
                     result.clear();

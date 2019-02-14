@@ -126,7 +126,7 @@ public class SisterDBHelper {
     /**
      * 查询当前表中有多少个妹子
      */
-    public int getSisterCount(){
+    public int getSistersCount(){
         db = getReadableDB();
         Cursor cursor = db.rawQuery("SELECT COUNT (*) FROM " + TableDefine.TABLE_FULI,null);
         cursor.moveToFirst();
