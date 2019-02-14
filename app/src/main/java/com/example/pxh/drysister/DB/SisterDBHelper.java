@@ -87,7 +87,7 @@ public class SisterDBHelper {
         contentValues.put(TableDefine.COLUMN_FULI_SOURCE,sister.getSource());
         contentValues.put(TableDefine.COLUMN_FULI_TYPE,sister.getType());
         contentValues.put(TableDefine.COLUMN_FULI_URL,sister.getUrl());
-        contentValues.put(TableDefine.COLUMN_FULI_USED,sister.getUsed());
+        contentValues.put(TableDefine.COLUMN_FULI_USED,sister.getUsed() ? 1 : 0);
         contentValues.put(TableDefine.COLUMN_FULI_WHO,sister.getWho());
         return contentValues;
     }
@@ -194,7 +194,7 @@ public class SisterDBHelper {
         sister.setSource(cursor.getString(cursor.getColumnIndex(TableDefine.COLUMN_FULI_SOURCE)));
         sister.setType(cursor.getString(cursor.getColumnIndex(TableDefine.COLUMN_FULI_TYPE)));
         sister.setUrl(cursor.getString(cursor.getColumnIndex(TableDefine.COLUMN_FULI_URL)));
-        sister.setUsed(cursor.getInt(cursor.getColumnIndex(TableDefine.COLUMN_FULI_USED)));
+        sister.setUsed(cursor.getInt(cursor.getColumnIndex(TableDefine.COLUMN_FULI_USED)) == 1 ? true : false);
         return sister;
     }
 
